@@ -6,7 +6,7 @@
   "scripts": {
     "prepare": "husky install .github/husky",
     "genshin": "yarn workspace es.genshin-impact",
-	"shared": "yarn workspace shared"
+    "shared": "yarn workspace shared"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.0",
