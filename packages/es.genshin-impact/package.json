@@ -1,0 +1,13 @@
+{
+	"name": "es.genshin-impact",
+	"version": "1.0.0",
+	"private": true,
+	"dependencies": {
+	},
+	"devDependencies": {
+		"@types/node": "^16.10.3",
+		"eslint": "^7.32.0",
+		"rimraf": "^3.0.2",
+		"typescript": "^4.4.3"
+	}
+}

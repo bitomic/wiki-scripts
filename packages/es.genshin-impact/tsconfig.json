@@ -1,0 +1,12 @@
+{
+	"compilerOptions": {
+	  "outDir": "dist",
+	  "rootDir": "src",
+	  "strictNullChecks": true
+	},
+	"references": [
+		{
+			"path": "../../tsconfig.json"
+		}
+	]
+}
