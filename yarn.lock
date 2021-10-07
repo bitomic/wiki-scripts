@@ -963,6 +963,7 @@ __metadata:
     find-yarn-workspace-root: ^2.0.0
     mw.js: ^1.4.1
     rimraf: ^3.0.2
+    shared: "workspace:*"
     typescript: ^4.4.3
   languageName: unknown
   linkType: soft
@@ -2523,7 +2524,7 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
-"shared@workspace:packages/shared":
+"shared@workspace:*, shared@workspace:packages/shared":
   version: 0.0.0-use.local
   resolution: "shared@workspace:packages/shared"
   dependencies:

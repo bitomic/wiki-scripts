@@ -11,6 +11,7 @@
 		"typescript": "^4.4.3"
 	},
 	"dependencies": {
-		"mw.js": "^1.4.1"
+		"mw.js": "^1.4.1",
+		"shared": "workspace:*"
 	}
 }
