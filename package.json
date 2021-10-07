@@ -3,6 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
+  "scripts": {
+	  "prepare": "husky install .github/husky"
+  },
   "devDependencies": {
     "@commitlint/cli": "^13.2.0",
     "@commitlint/config-conventional": "^13.2.0",
