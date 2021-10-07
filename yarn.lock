@@ -2523,6 +2523,19 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
+"shared@workspace:packages/shared":
+  version: 0.0.0-use.local
+  resolution: "shared@workspace:packages/shared"
+  dependencies:
+    "@types/node": ^16.10.3
+    dotenv: ^10.0.0
+    eslint: ^7.32.0
+    find-yarn-workspace-root: ^2.0.0
+    rimraf: ^3.0.2
+    typescript: ^4.4.3
+  languageName: unknown
+  linkType: soft
+
 "shebang-command@npm:^2.0.0":
   version: 2.0.0
   resolution: "shebang-command@npm:2.0.0"

@@ -1,0 +1,13 @@
+{
+	"compilerOptions": {
+	  "outDir": "dist",
+	  "rootDir": "src",
+	  "strictNullChecks": true,
+	  "esModuleInterop": true
+	},
+	"references": [
+		{
+			"path": "../../tsconfig.json"
+		}
+	]
+}
