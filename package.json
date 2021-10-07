@@ -4,7 +4,7 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-	  "prepare": "husky install .github/husky"
+    "prepare": "husky install .github/husky"
   },
   "devDependencies": {
     "@commitlint/cli": "^13.2.0",
@@ -17,5 +17,8 @@
   },
   "workspaces": [
     "packages/*"
-  ]
+  ],
+  "dependencies": {
+    "lint-staged": "^11.2.0"
+  }
 }
