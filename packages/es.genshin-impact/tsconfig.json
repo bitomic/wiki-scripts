@@ -2,7 +2,8 @@
 	"compilerOptions": {
 	  "outDir": "dist",
 	  "rootDir": "src",
-	  "strictNullChecks": true
+	  "strictNullChecks": true,
+	  "esModuleInterop": true
 	},
 	"references": [
 		{
