@@ -107,7 +107,7 @@
 			"always"
 		],
 		"newline-per-chained-call": "error",
-		"no-console": "error",
+		"no-console": "off",
 		"no-constructor-return": "error",
 		"no-extra-parens": "error",
 		"no-multiple-empty-lines": "error",
