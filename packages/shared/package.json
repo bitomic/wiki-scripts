@@ -3,6 +3,9 @@
 	"version": "1.0.0",
 	"main": "dist/main.js",
 	"private": true,
+	"scripts": {
+		"build": "rimraf dist && tsc"
+	},
 	"devDependencies": {
 		"@types/node": "^16.10.3",
 		"dotenv": "^10.0.0",
