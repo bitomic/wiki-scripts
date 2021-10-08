@@ -12,6 +12,7 @@
 	},
 	"dependencies": {
 		"mw.js": "^1.4.3",
+		"mwparser": "^1.0.0",
 		"shared": "workspace:*"
 	}
 }
