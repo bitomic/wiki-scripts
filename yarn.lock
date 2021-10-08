@@ -297,6 +297,13 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/lua-json@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "@types/lua-json@npm:1.0.0"
+  checksum: f6da1dc82acc441140eb6e6e7fd16331787355661f42a1eae1af0c4de0d809994eaac1d01e2d5e5fc8380d96619c33591cc71f29a2edc75c5c588425ce60fc0d
+  languageName: node
+  linkType: hard
+
 "@types/minimist@npm:^1.2.0":
   version: 1.2.2
   resolution: "@types/minimist@npm:1.2.2"
@@ -957,10 +964,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "es.genshin-impact@workspace:packages/es.genshin-impact"
   dependencies:
+    "@types/lua-json": ^1.0.0
     "@types/node": ^16.10.3
     dotenv: ^10.0.0
     eslint: ^7.32.0
     find-yarn-workspace-root: ^2.0.0
+    lua-json: ^1.0.0
     mw.js: ^1.4.3
     mwparser: ^1.0.0
     rimraf: ^3.0.2
@@ -1855,7 +1864,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lodash@npm:^4.17.15, lodash@npm:^4.17.19":
+"lodash@npm:^4.17.11, lodash@npm:^4.17.15, lodash@npm:^4.17.19":
   version: 4.17.21
   resolution: "lodash@npm:4.17.21"
   checksum: eb835a2e51d381e561e508ce932ea50a8e5a68f4ebdd771ea240d3048244a8d13658acbd502cd4829768c56f2e16bdd4340b9ea141297d472517b83868e677f7
@@ -1880,6 +1889,25 @@ __metadata:
   dependencies:
     yallist: ^4.0.0
   checksum: f97f499f898f23e4585742138a22f22526254fdba6d75d41a1c2526b3b6cc5747ef59c5612ba7375f42aca4f8461950e925ba08c991ead0651b4918b7c978297
+  languageName: node
+  linkType: hard
+
+"lua-json@npm:^1.0.0":
+  version: 1.0.0
+  resolution: "lua-json@npm:1.0.0"
+  dependencies:
+    lodash: ^4.17.11
+    luaparse: ^0.2.1
+  checksum: 0cd0ec9b39e1147dd7fa23c1d75aaebaee0d2106e663834e75422aec1bf218d79beda9204f50fc3b6b9f0e7f68d9e31ba1d99588613bad7f659575c562af48a1
+  languageName: node
+  linkType: hard
+
+"luaparse@npm:^0.2.1":
+  version: 0.2.1
+  resolution: "luaparse@npm:0.2.1"
+  bin:
+    luaparse: ./bin/luaparse
+  checksum: db5fb4c535b21475869454eedf7f919e5c488db5fc1ef41397bab717e4a26932f50ad91d96101eb6a1e4a3a6e8a7953e816ac5bc2594a1baadb009a38b5eacd5
   languageName: node
   linkType: hard
 
