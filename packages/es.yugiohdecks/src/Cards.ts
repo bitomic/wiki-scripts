@@ -145,6 +145,6 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 		} )
 			.then( console.log )
 			.catch( console.error )
-		await sleep( 500 )
+		await sleep( 1000 )
 	}
 } )()
