@@ -70,19 +70,18 @@ const parseCard = ( infobox: Template ): string[] | null => {
 		const [
 			english, attribute, type, level, attack, defense, code
 		] = attributes.map( attr => infobox.getParameter( attr )?.value )
-		if ( !english || !attribute || !type || !level || !attack || !code ) return null
+		if ( !english || !attribute || !type || !attack || !code ) return null
 		if ( cardType === 'monstruo de enlace' ) {
 			return [
 				english,
 				cardType,
 				attribute,
 				type,
-				level,
 				attack,
 				code
 			]
 		} else {
-			if ( !defense ) return null
+			if ( !defense || !level ) return null
 			return [
 				english,
 				cardType,
@@ -100,7 +99,8 @@ const parseCard = ( infobox: Template ): string[] | null => {
 void ( async () => {
 	const fandom = new Fandom()
 	const wiki = fandom.getWiki( 'es.yugioh' )
-	const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
+	//const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
+	const cards = [ 'Cría Protectora del Esgrimista de la Espada de la Destrucción' ]
 
 	const data: Record<string, string[]> = {}
 
