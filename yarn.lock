@@ -291,6 +291,15 @@ __metadata:
   languageName: node
   linkType: hard
 
+"@types/fs-extra@npm:^9.0.13":
+  version: 9.0.13
+  resolution: "@types/fs-extra@npm:9.0.13"
+  dependencies:
+    "@types/node": "*"
+  checksum: add79e212acd5ac76b97b9045834e03a7996aef60a814185e0459088fd290519a3c1620865d588fa36c4498bf614210d2a703af5cf80aa1dbc125db78f6edac3
+  languageName: node
+  linkType: hard
+
 "@types/json-schema@npm:^7.0.7":
   version: 7.0.9
   resolution: "@types/json-schema@npm:7.0.9"
@@ -983,10 +992,12 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "es.yugiohdecks@workspace:packages/es.yugiohdecks"
   dependencies:
+    "@types/fs-extra": ^9.0.13
     "@types/lua-json": ^1.0.0
     "@types/node": ^16.10.3
     dotenv: ^10.0.0
     eslint: ^7.32.0
+    fs-extra: ^10.0.0
     lua-json: ^1.0.0
     mw.js: ^1.4.5
     mwparser: ^1.1.0
