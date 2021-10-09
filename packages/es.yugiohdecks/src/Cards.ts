@@ -7,6 +7,7 @@ import type { Template } from 'mwparser'
 const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( r, ms ) } )
 
 const getIdentifier = ( name: string ): string => name.toUpperCase()
+	.replace( /&/g, 'Y' )
 	.normalize( 'NFD' )
 	.replace( /[\u0300-\u036f]/g, '' )
 	.replace( /\((legal|carta|card)\)/i, '' )
