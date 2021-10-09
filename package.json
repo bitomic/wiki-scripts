@@ -4,9 +4,10 @@
   "main": "index.js",
   "license": "MIT",
   "scripts": {
-	"build:all": "yarn workspaces foreach -pvt run build",
+    "build:all": "yarn workspaces foreach -pvt run build",
     "prepare": "husky install .github/husky",
     "genshin": "yarn workspace es.genshin-impact",
+    "ygodecks": "yarn workspace es.yugioh",
     "shared": "yarn workspace shared"
   },
   "devDependencies": {
