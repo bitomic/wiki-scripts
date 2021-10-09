@@ -1,5 +1,4 @@
 {
-	"exclude": [ "dist", "node_modules" ],
 	"compilerOptions": {
 	  "composite": true,
 	  "module": "CommonJS",
