@@ -1,7 +1,7 @@
-import { Fandom } from 'mw.js'
-import fs from 'fs-extra'
+import 'shared'
+import { Fandom, FandomWiki } from 'mw.js'
+import { format } from 'lua-json'
 import { parse } from 'mwparser'
-import path from 'path'
 import type { Template } from 'mwparser'
 //import util from 'util'
 
@@ -96,11 +96,8 @@ const parseCard = ( infobox: Template ): string[] | null => {
 	}
 }
 
-void ( async () => {
-	const fandom = new Fandom()
-	const wiki = fandom.getWiki( 'es.yugioh' )
-	//const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
-	const cards = [ 'Cría Protectora del Esgrimista de la Espada de la Destrucción' ]
+const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]>> => {
+	const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
 
 	const data: Record<string, string[]> = {}
 
@@ -122,9 +119,42 @@ void ( async () => {
 		}
 	}
 
-	const filepath = path.resolve( __dirname, '../cards.json' )
-	fs.ensureFileSync( filepath )
-	fs.writeJSONSync( filepath, data, {
-		spaces: '\t'
+	return data
+}
+
+( async () => {
+	const { FANDOM_PASSWORD, FANDOM_USERNAME } = process.env
+	if ( !FANDOM_PASSWORD || !FANDOM_USERNAME ) {
+		console.error( 'You haven\'t set a fandom username and/or password in your environment variables.' )
+		return
+	}
+
+	const fandom = new Fandom()
+	const cards = await getCardsData( fandom.getWiki( 'es.yugioh' ) )
+	
+	const sorted: Record<string, Record<string, string[]>> = {}
+	for ( const identifier in cards ) {
+		const firstLetter = identifier.substr( 0, 1 ).toUpperCase()
+		const group = /[A-Z]/.exec( firstLetter ) ? firstLetter : '7'
+		if ( !( group in sorted ) ) sorted[ group ] = {}
+		sorted[ group ]![ identifier ] = cards[ identifier ]!
+	}
+
+	const wiki = fandom.getWiki( 'bitomic' )
+	const bot = await fandom.login( {
+		password: FANDOM_PASSWORD,
+		username: FANDOM_USERNAME,
+		wiki
 	} )
-} )()
+	
+	const keys = Object.keys( sorted ).sort()
+	for ( const key of keys ) {
+		const lua = format( sorted[ key ] ?? {} )
+		await bot.edit( {
+			text: lua,
+			title: `Module:RdDatos${ key }`
+		} )
+			.then( console.log )
+			.catch( console.error )
+	}
+} )
