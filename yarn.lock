@@ -970,7 +970,7 @@ __metadata:
     eslint: ^7.32.0
     find-yarn-workspace-root: ^2.0.0
     lua-json: ^1.0.0
-    mw.js: ^1.4.3
+    mw.js: ^1.4.4
     mwparser: ^1.1.0
     rimraf: ^3.0.2
     shared: "workspace:*"
@@ -987,7 +987,7 @@ __metadata:
     dotenv: ^10.0.0
     eslint: ^7.32.0
     lua-json: ^1.0.0
-    mw.js: ^1.4.3
+    mw.js: ^1.4.4
     mwparser: ^1.1.0
     rimraf: ^3.0.2
     shared: "workspace:*"
@@ -2049,16 +2049,16 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mw.js@npm:^1.4.3":
-  version: 1.4.3
-  resolution: "mw.js@npm:1.4.3"
+"mw.js@npm:^1.4.4":
+  version: 1.4.4
+  resolution: "mw.js@npm:1.4.4"
   dependencies:
     form-data: ^4.0.0
     fs-extra: ^10.0.0
     node-fetch: ^2.6.1
     signale: ^1.4.0
     tough-cookie: ^4.0.0
-  checksum: 21ab23065d62a6a78dc89897348dd40a93553aef94e4747d472c46c79b2c10acb94a0f38fdf724c56a663fec5c450e051cdc3de64645f11fce1270508f0daa65
+  checksum: 7c2c63b0680180899a2d7912ee273c0d8a22f068bbcc355ae42d5e28ba25d4bb1e30246510bd3f995bb255a05bf6f5613bf96a2f7a41c9e63704a69f832ebefb
   languageName: node
   linkType: hard
 
