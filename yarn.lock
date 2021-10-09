@@ -971,7 +971,7 @@ __metadata:
     find-yarn-workspace-root: ^2.0.0
     lua-json: ^1.0.0
     mw.js: ^1.4.3
-    mwparser: ^1.0.0
+    mwparser: ^1.1.0
     rimraf: ^3.0.2
     shared: "workspace:*"
     typescript: ^4.4.3
@@ -988,7 +988,7 @@ __metadata:
     eslint: ^7.32.0
     lua-json: ^1.0.0
     mw.js: ^1.4.3
-    mwparser: ^1.0.0
+    mwparser: ^1.1.0
     rimraf: ^3.0.2
     shared: "workspace:*"
     typescript: ^4.4.3
@@ -2062,12 +2062,12 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mwparser@npm:^1.0.0":
-  version: 1.0.0
-  resolution: "mwparser@npm:1.0.0"
+"mwparser@npm:^1.1.0":
+  version: 1.1.0
+  resolution: "mwparser@npm:1.1.0"
   dependencies:
     peggy: ^1.2.0
-  checksum: a03fffa29ca2916225022d2dfcb4edab18ec154e748aedd6e84d84f2fa0c55cf415c93ee890b243ba4769700dcd0da9d840c29a30c53790b8b3c6776d6780812
+  checksum: 2f25943f951cd1fbf5114d43f982ec07071728bdbe77d4957455888291a273e31796aa62340b3ee95c3c949f0f7f31315ebe8e1511a218256412146b9fafac19
   languageName: node
   linkType: hard
 
