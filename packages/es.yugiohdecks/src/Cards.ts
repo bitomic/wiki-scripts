@@ -3,20 +3,8 @@ import { Fandom, FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import { parse } from 'mwparser'
 import type { Template } from 'mwparser'
-//import util from 'util'
 
-/*
-( async () => {
-	const fandom = new Fandom()
-	const wiki = fandom.getWiki( 'es.yugioh' )
-	const page = ( await wiki.getPages( 'Engranaji-ancla' ) )
-	const parsed = parse( page )
-	console.log( util.inspect( parsed, {
-		colors: true,
-		depth: 6
-	} ) )
-} )()
-*/
+const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( r, ms ) } )
 
 const getIdentifier = ( name: string ): string => name.toUpperCase()
 	.normalize( 'NFD' )
@@ -156,5 +144,6 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 		} )
 			.then( console.log )
 			.catch( console.error )
+		await sleep( 500 )
 	}
 } )
