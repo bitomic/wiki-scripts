@@ -979,6 +979,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"es.yugiohdecks@workspace:packages/es.yugiohdecks":
+  version: 0.0.0-use.local
+  resolution: "es.yugiohdecks@workspace:packages/es.yugiohdecks"
+  dependencies:
+    "@types/lua-json": ^1.0.0
+    "@types/node": ^16.10.3
+    dotenv: ^10.0.0
+    eslint: ^7.32.0
+    lua-json: ^1.0.0
+    mw.js: ^1.4.3
+    mwparser: ^1.0.0
+    rimraf: ^3.0.2
+    shared: "workspace:*"
+    typescript: ^4.4.3
+  languageName: unknown
+  linkType: soft
+
 "escalade@npm:^3.1.1":
   version: 3.1.1
   resolution: "escalade@npm:3.1.1"
