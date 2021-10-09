@@ -6,6 +6,7 @@
 		"build": "rimraf tsconfig.tsbuildinfo dist && tsc"
 	},
 	"devDependencies": {
+		"@types/fs-extra": "^9.0.13",
 		"@types/lua-json": "^1.0.0",
 		"@types/node": "^16.10.3",
 		"dotenv": "^10.0.0",
@@ -14,6 +15,7 @@
 		"typescript": "^4.4.3"
 	},
 	"dependencies": {
+		"fs-extra": "^10.0.0",
 		"lua-json": "^1.0.0",
 		"mw.js": "^1.4.5",
 		"mwparser": "^1.1.0",
