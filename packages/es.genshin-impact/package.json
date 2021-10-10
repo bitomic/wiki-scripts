@@ -18,7 +18,7 @@
 	"dependencies": {
 		"lua-json": "1.0.0",
 		"mw.js": "1.4.5",
-		"mwparser": "1.1.0",
+		"mwparser": "1.2.1",
 		"shared": "workspace:*"
 	}
 }
