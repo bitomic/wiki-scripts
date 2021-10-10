@@ -41,7 +41,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/cli@npm:^13.2.0":
+"@commitlint/cli@npm:13.2.0":
   version: 13.2.0
   resolution: "@commitlint/cli@npm:13.2.0"
   dependencies:
@@ -60,7 +60,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@commitlint/config-conventional@npm:^13.2.0":
+"@commitlint/config-conventional@npm:13.2.0":
   version: 13.2.0
   resolution: "@commitlint/config-conventional@npm:13.2.0"
   dependencies:
@@ -297,7 +297,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/lua-json@npm:^1.0.0":
+"@types/lua-json@npm:1.0.0":
   version: 1.0.0
   resolution: "@types/lua-json@npm:1.0.0"
   checksum: f6da1dc82acc441140eb6e6e7fd16331787355661f42a1eae1af0c4de0d809994eaac1d01e2d5e5fc8380d96619c33591cc71f29a2edc75c5c588425ce60fc0d
@@ -311,7 +311,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@types/node@npm:^16.10.3":
+"@types/node@npm:16.10.3":
   version: 16.10.3
   resolution: "@types/node@npm:16.10.3"
   checksum: 3fd429bce8a4acb497dcc62b536782a5e87ccf7cd91d64a78b263ae5d66cb72bf84be9eeeff6f84ae0567b065a40b267caa66d311f9e094990a5847bbd168a29
@@ -332,7 +332,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/eslint-plugin@npm:^4.33.0":
+"@typescript-eslint/eslint-plugin@npm:4.33.0":
   version: 4.33.0
   resolution: "@typescript-eslint/eslint-plugin@npm:4.33.0"
   dependencies:
@@ -370,7 +370,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"@typescript-eslint/parser@npm:^4.33.0":
+"@typescript-eslint/parser@npm:4.33.0":
   version: 4.33.0
   resolution: "@typescript-eslint/parser@npm:4.33.0"
   dependencies:
@@ -928,7 +928,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"dotenv@npm:^10.0.0":
+"dotenv@npm:10.0.0":
   version: 10.0.0
   resolution: "dotenv@npm:10.0.0"
   checksum: f412c5fe8c24fbe313d302d2500e247ba8a1946492db405a4de4d30dd0eb186a88a43f13c958c5a7de303938949c4231c56994f97d05c4bc1f22478d631b4005
@@ -964,17 +964,17 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "es.genshin-impact@workspace:packages/es.genshin-impact"
   dependencies:
-    "@types/lua-json": ^1.0.0
-    "@types/node": ^16.10.3
-    dotenv: ^10.0.0
-    eslint: ^7.32.0
-    find-yarn-workspace-root: ^2.0.0
-    lua-json: ^1.0.0
-    mw.js: ^1.4.3
-    mwparser: ^1.0.0
-    rimraf: ^3.0.2
+    "@types/lua-json": 1.0.0
+    "@types/node": 16.10.3
+    dotenv: 10.0.0
+    eslint: 7.32.0
+    find-yarn-workspace-root: 2.0.0
+    lua-json: 1.0.0
+    mw.js: 1.4.3
+    mwparser: 1.0.0
+    rimraf: 3.0.2
     shared: "workspace:*"
-    typescript: ^4.4.3
+    typescript: 4.4.3
   languageName: unknown
   linkType: soft
 
@@ -1043,7 +1043,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"eslint@npm:^7.32.0":
+"eslint@npm:7.32.0":
   version: 7.32.0
   resolution: "eslint@npm:7.32.0"
   dependencies:
@@ -1269,7 +1269,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"find-yarn-workspace-root@npm:^2.0.0":
+"find-yarn-workspace-root@npm:2.0.0":
   version: 2.0.0
   resolution: "find-yarn-workspace-root@npm:2.0.0"
   dependencies:
@@ -1489,7 +1489,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"husky@npm:^7.0.2":
+"husky@npm:7.0.2":
   version: 7.0.2
   resolution: "husky@npm:7.0.2"
   bin:
@@ -1892,7 +1892,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"lua-json@npm:^1.0.0":
+"lua-json@npm:1.0.0":
   version: 1.0.0
   resolution: "lua-json@npm:1.0.0"
   dependencies:
@@ -2032,7 +2032,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mw.js@npm:^1.4.3":
+"mw.js@npm:1.4.3":
   version: 1.4.3
   resolution: "mw.js@npm:1.4.3"
   dependencies:
@@ -2045,7 +2045,7 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mwparser@npm:^1.0.0":
+"mwparser@npm:1.0.0":
   version: 1.0.0
   resolution: "mwparser@npm:1.0.0"
   dependencies:
@@ -2508,7 +2508,7 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
-"rimraf@npm:^3.0.2":
+"rimraf@npm:3.0.2, rimraf@npm:^3.0.2":
   version: 3.0.2
   resolution: "rimraf@npm:3.0.2"
   dependencies:
@@ -2575,12 +2575,12 @@ resolve@^1.10.0:
   version: 0.0.0-use.local
   resolution: "shared@workspace:packages/shared"
   dependencies:
-    "@types/node": ^16.10.3
-    dotenv: ^10.0.0
-    eslint: ^7.32.0
-    find-yarn-workspace-root: ^2.0.0
-    rimraf: ^3.0.2
-    typescript: ^4.4.3
+    "@types/node": 16.10.3
+    dotenv: 10.0.0
+    eslint: 7.32.0
+    find-yarn-workspace-root: 2.0.0
+    rimraf: 3.0.2
+    typescript: 4.4.3
   languageName: unknown
   linkType: soft
 
@@ -2986,7 +2986,7 @@ resolve@^1.10.0:
   languageName: node
   linkType: hard
 
-typescript@^4.4.3:
+typescript@4.4.3:
   version: 4.4.3
   resolution: "typescript@npm:4.4.3"
   bin:
@@ -2996,7 +2996,7 @@ typescript@^4.4.3:
   languageName: node
   linkType: hard
 
-"typescript@patch:typescript@^4.4.3#~builtin<compat/typescript>":
+"typescript@patch:typescript@4.4.3#~builtin<compat/typescript>":
   version: 4.4.3
   resolution: "typescript@patch:typescript@npm%3A4.4.3#~builtin<compat/typescript>::version=4.4.3&hash=32657b"
   bin:
@@ -3085,15 +3085,15 @@ typescript@^4.4.3:
   version: 0.0.0-use.local
   resolution: "wikiscripts@workspace:."
   dependencies:
-    "@commitlint/cli": ^13.2.0
-    "@commitlint/config-conventional": ^13.2.0
-    "@types/node": ^16.10.3
-    "@typescript-eslint/eslint-plugin": ^4.33.0
-    "@typescript-eslint/parser": ^4.33.0
-    eslint: ^7.32.0
-    husky: ^7.0.2
+    "@commitlint/cli": 13.2.0
+    "@commitlint/config-conventional": 13.2.0
+    "@types/node": 16.10.3
+    "@typescript-eslint/eslint-plugin": 4.33.0
+    "@typescript-eslint/parser": 4.33.0
+    eslint: 7.32.0
+    husky: 7.0.2
     lint-staged: ^11.2.0
-    typescript: ^4.4.3
+    typescript: 4.4.3
   languageName: unknown
   linkType: soft
 
