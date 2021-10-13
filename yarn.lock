@@ -970,6 +970,23 @@ __metadata:
   languageName: node
   linkType: hard
 
+"es.bindingofisaac@workspace:packages/es.bindingofisaac":
+  version: 0.0.0-use.local
+  resolution: "es.bindingofisaac@workspace:packages/es.bindingofisaac"
+  dependencies:
+    "@types/fs-extra": ^9.0.13
+    "@types/node": ^16.10.3
+    dotenv: ^10.0.0
+    eslint: ^7.32.0
+    fs-extra: ^10.0.0
+    mw.js: ^1.4.5
+    mwparser: ^1.1.0
+    rimraf: ^3.0.2
+    shared: "workspace:*"
+    typescript: ^4.4.3
+  languageName: unknown
+  linkType: soft
+
 "es.genshin-impact@workspace:packages/es.genshin-impact":
   version: 0.0.0-use.local
   resolution: "es.genshin-impact@workspace:packages/es.genshin-impact"
