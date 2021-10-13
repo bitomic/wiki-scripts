@@ -1,5 +1,6 @@
 import 'shared'
-import { Fandom, FandomWiki } from 'mw.js'
+import { Fandom } from 'mw.js'
+import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
 import { parse } from 'mwparser'
 import type { Template } from 'mwparser'
@@ -29,12 +30,12 @@ const parseCard = ( infobox: Template ): string[] | null => {
 		const [
 			english, icon, code
 		] = attributes.map( attr => infobox.getParameter( attr )?.value )
-		if ( !english || !icon || !code ) return null
+		if ( !english || !code ) return null
 		return [
 			english,
 			'carta mágica',
 			'mágica',
-			icon.toLowerCase(),
+			icon?.toLowerCase() || 'normal',
 			code
 		]
 	} else if ( cardType === 'carta de trampa' ) {
@@ -44,12 +45,12 @@ const parseCard = ( infobox: Template ): string[] | null => {
 		const [
 			english, icon, code
 		] = attributes.map( attr => infobox.getParameter( attr )?.value )
-		if ( !english || !icon || !code ) return null
+		if ( !english || !code ) return null
 		return [
 			english,
 			'carta de trampa',
 			'trampa',
-			icon.toLowerCase(),
+			icon?.toLowerCase() ?? 'normal',
 			code
 		]
 	} else {
@@ -111,7 +112,7 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 	return data
 }
 
-( async () => {
+void ( async () => {
 	const { FANDOM_PASSWORD, FANDOM_USERNAME } = process.env
 	if ( !FANDOM_PASSWORD || !FANDOM_USERNAME ) {
 		console.error( 'You haven\'t set a fandom username and/or password in your environment variables.' )
@@ -120,22 +121,23 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 
 	const fandom = new Fandom()
 	const cards = await getCardsData( fandom.getWiki( 'es.yugioh' ) )
-	
+
 	const sorted: Record<string, Record<string, string[]>> = {}
 	for ( const identifier in cards ) {
 		const firstLetter = identifier.substr( 0, 1 ).toUpperCase()
 		const group = /[A-Z]/.exec( firstLetter ) ? firstLetter : '7'
 		if ( !( group in sorted ) ) sorted[ group ] = {}
+		// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 		sorted[ group ]![ identifier ] = cards[ identifier ]!
 	}
 
-	const wiki = fandom.getWiki( 'bitomic' )
+	const wiki = fandom.getWiki( 'es.yugiohdecks' )
 	const bot = await fandom.login( {
 		password: FANDOM_PASSWORD,
 		username: FANDOM_USERNAME,
 		wiki
 	} )
-	
+
 	const keys = Object.keys( sorted ).sort()
 	for ( const key of keys ) {
 		const lua = format( sorted[ key ] ?? {} )
