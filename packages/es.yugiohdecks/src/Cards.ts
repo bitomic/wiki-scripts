@@ -2,18 +2,23 @@ import 'shared'
 import { Fandom } from 'mw.js'
 import type { FandomWiki } from 'mw.js'
 import { format } from 'lua-json'
+import greek from 'greek-utils'
 import { parse } from 'mwparser'
 import type { Template } from 'mwparser'
 
 const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( r, ms ) } )
 
-const getIdentifier = ( name: string ): string => name.toUpperCase()
+const getIdentifier = ( name: string ): string => greek.toGreeklish( name ).toUpperCase()
 	.replace( /Ñ/g, 'n' )
+	.replace( /@/g, 'a' )
+	.replace( /%/g, 'p' )
 	.replace( /&/g, 'Y' )
 	.normalize( 'NFD' )
 	.replace( /[\u0300-\u036f]/g, '' )
 	.replace( /\((legal|carta|card)\)/i, '' )
 	.replace( /n/g, 'Ñ' )
+	.replace( /a/g, '@' )
+	.replace( /p/g, '%' )
 	.replace( /[^A-ZÑ0-9]/g, '' )
 
 const parseCard = ( infobox: Template ): string[] | null => {
