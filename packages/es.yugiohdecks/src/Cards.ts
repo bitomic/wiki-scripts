@@ -77,8 +77,8 @@ const parseCard = ( infobox: Template ): string[] | null => {
 			return [
 				english,
 				cardType,
-				attribute,
-				type,
+				attribute.toLowerCase(),
+				type.toLowerCase(),
 				level,
 				attack,
 				defense,
