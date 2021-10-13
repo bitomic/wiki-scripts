@@ -94,7 +94,7 @@ const parseCard = ( infobox: Template ): string[] | null => {
 }
 
 const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]>> => {
-	const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
+	const cards = [ 'Gíclope Gigatrueno' ] // ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
 
 	const data: Record<string, string[]> = {}
 
@@ -102,7 +102,7 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 		const content = page.revisions[ 0 ]?.slots.main.content
 		if ( !content ) continue
 		const parsed = parse( content )
-		const [ infobox ] = parsed.findTemplate( 'Infobox Carta' ).nodes
+		const infobox = parsed.findTemplate( 'Infobox Carta' ).nodes[ 0 ] ?? parsed.findTemplate( 'InfoboxCarta' ).nodes[ 0 ]
 		if ( !infobox ) continue
 		const cardData = parseCard( infobox )
 		if ( cardData ) {
