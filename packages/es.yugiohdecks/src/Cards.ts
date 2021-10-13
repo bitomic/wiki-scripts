@@ -19,7 +19,7 @@ const getIdentifier = ( name: string ): string => greek.toGreeklish( name ).toUp
 	.replace( /n/g, 'Ñ' )
 	.replace( /a/g, '@' )
 	.replace( /p/g, '%' )
-	.replace( /[^A-ZÑ0-9]/g, '' )
+	.replace( /[^A-ZÑ0-9@%]/g, '' )
 
 const parseCard = ( infobox: Template ): string[] | null => {
 	const message = infobox.getParameter( 'mensaje' )?.value
