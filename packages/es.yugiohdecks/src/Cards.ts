@@ -8,10 +8,12 @@ import type { Template } from 'mwparser'
 const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( r, ms ) } )
 
 const getIdentifier = ( name: string ): string => name.toUpperCase()
+	.replace( /Ñ/g, 'n' )
 	.replace( /&/g, 'Y' )
 	.normalize( 'NFD' )
 	.replace( /[\u0300-\u036f]/g, '' )
 	.replace( /\((legal|carta|card)\)/i, '' )
+	.replace( /n/g, 'Ñ' )
 	.replace( /[^A-ZÑ0-9]/g, '' )
 
 const parseCard = ( infobox: Template ): string[] | null => {
@@ -65,8 +67,8 @@ const parseCard = ( infobox: Template ): string[] | null => {
 			return [
 				english,
 				cardType,
-				attribute,
-				type,
+				attribute.toLowerCase(),
+				type.toLowerCase(),
 				attack,
 				code
 			]
