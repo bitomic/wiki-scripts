@@ -28,7 +28,7 @@ const getRarities = async ( { titles, wiki }: { titles: string[], wiki: FandomWi
 		const content = page.revisions[ 0 ]?.slots.main.content
 		if ( !content ) continue
 		const parsed = parse( content )
-		const infoboxName = parsed.templates.nodes.map( t => t.name ).find( t => t.startsWith( 'Infobox' ) )
+		const infoboxName = parsed.templates.map( t => t.name ).find( t => t.startsWith( 'Infobox' ) )
 		if ( !infoboxName ) continue
 		const [ infobox ] = parsed.findTemplate( infoboxName ).nodes
 		if ( !infobox ) continue
