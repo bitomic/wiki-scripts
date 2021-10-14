@@ -8,18 +8,16 @@ import type { Template } from 'mwparser'
 
 const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( r, ms ) } )
 
-const getIdentifier = ( name: string ): string => greek.toGreeklish( name ).toUpperCase()
-	.replace( /Ñ/g, 'n' )
-	.replace( /@/g, 'a' )
-	.replace( /%/g, 'p' )
-	.replace( /&/g, 'Y' )
-	.normalize( 'NFD' )
-	.replace( /[\u0300-\u036f]/g, '' )
-	.replace( /\((legal|carta|card)\)/i, '' )
-	.replace( /n/g, 'Ñ' )
-	.replace( /a/g, '@' )
-	.replace( /p/g, '%' )
-	.replace( /[^A-ZÑ0-9@%]/g, '' )
+const getIdentifier = ( name: string ): Set<string> => {
+	const normalized = name.toUpperCase()
+		.normalize( 'NFD' )
+		.replace( /\p{Diacritic}/gu, '' )
+		.replace( /\((legal|carta|card)\)/i, '' )
+		.replace( /[,-.°¡!'"¿?=º/·()☆«»★ ]/g, '' )
+	return new Set( [
+		normalized, greek.toGreeklish( normalized )
+	] )
+}
 
 const parseCard = ( infobox: Template ): string[] | null => {
 	const message = infobox.getParameter( 'mensaje' )?.value
@@ -106,13 +104,15 @@ const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]
 		if ( !infobox ) continue
 		const cardData = parseCard( infobox )
 		if ( cardData ) {
-			const es = getIdentifier( page.title )
-			const en = cardData[ 0 ] ? getIdentifier( cardData[ 0 ] ) : null
+			const identifiers = [
+				...getIdentifier( page.title ), ...getIdentifier( cardData[ 0 ] ?? page.title )
+			]
 			const fullData = [
 				page.title, ...cardData
 			]
-			data[ es ] = fullData
-			if ( en ) data[ en ] = fullData
+			for ( const identifier of identifiers ) {
+				data[ identifier ] = fullData
+			}
 		}
 	}
 
