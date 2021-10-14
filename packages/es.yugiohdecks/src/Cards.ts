@@ -95,7 +95,7 @@ const parseCard = ( infobox: Template ): string[] | null => {
 }
 
 const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]>> => {
-	const cards = ( await wiki.getTransclusions( 'Plantilla:Infobox Carta' ) ).sort()
+	const cards = ( await wiki.getTransclusions( 'Plantilla:InfoboxCarta' ) ).sort()
 
 	const data: Record<string, string[]> = {}
 
