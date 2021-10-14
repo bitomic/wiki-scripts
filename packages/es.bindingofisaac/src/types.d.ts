@@ -87,7 +87,12 @@ interface ItemPoolsXML {
 				Id: number
 				RemoveOn: number
 				Weight: number
-			}>
+			}> | {
+				DecreaseBy: number
+				Id: number
+				RemoveOn: number
+				Weight: number
+			}
 		}>
 	}
 }

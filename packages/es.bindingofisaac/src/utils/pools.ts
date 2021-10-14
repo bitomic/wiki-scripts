@@ -14,4 +14,11 @@ const getPools = (): ItemPoolsXML => {
 	return data
 }
 
-export const pools = getPools().ItemPools.Pool
+export const pools = getPools().ItemPools.Pool.reduce( ( collection, item ) => {
+	if ( Array.isArray( item.Item ) ) {
+		collection[ item.Name ] = item.Item.map( i => i.Id )
+	} else {
+		collection[ item.Name ] = [ item.Item.Id ]
+	}
+	return collection
+}, {} as Record<string, number[]> )
