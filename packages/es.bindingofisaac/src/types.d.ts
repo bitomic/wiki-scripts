@@ -77,3 +77,17 @@ interface ItemsXML {
 		}>
 	}
 }
+
+interface ItemPoolsXML {
+	ItemPools: {
+		Pool: Array<{
+			Name: string
+			Item: Array<{
+				DecreaseBy: number
+				Id: number
+				RemoveOn: number
+				Weight: number
+			}>
+		}>
+	}
+}
