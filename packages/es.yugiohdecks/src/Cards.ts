@@ -15,7 +15,7 @@ const getIdentifier = ( name: string ): Set<string> => {
 		.normalize( 'NFD' )
 		.replace( /\p{Diacritic}/gu, '' )
 		.replace( /\((legal|carta|card)\)/i, '' )
-		.replace( /[:,-.°¡!'"¿?=º/·()☆«»★ ’]/g, '' )
+		.replace( /[:,-.°¡!'"¿?=º/·()☆«»★ ’“”]/g, '' )
 		.replace( /n/g, 'Ñ' )
 	return new Set( [
 		normalized, greek.toGreeklish( normalized )
