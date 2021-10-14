@@ -10,10 +10,12 @@ const sleep = ( ms: number ): Promise<never> => new Promise( r => { setTimeout( 
 
 const getIdentifier = ( name: string ): Set<string> => {
 	const normalized = name.toUpperCase()
+		.replace( /Ñ/g, 'n' )
 		.normalize( 'NFD' )
 		.replace( /\p{Diacritic}/gu, '' )
 		.replace( /\((legal|carta|card)\)/i, '' )
 		.replace( /[,-.°¡!'"¿?=º/·()☆«»★ ]/g, '' )
+		.replace( /n/g, 'Ñ' )
 	return new Set( [
 		normalized, greek.toGreeklish( normalized )
 	] )
