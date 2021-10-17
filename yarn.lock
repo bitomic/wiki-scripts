@@ -994,8 +994,8 @@ __metadata:
     eslint: ^7.32.0
     fast-xml-parser: ^3.20.3
     fs-extra: ^10.0.0
-    mw.js: ^1.4.5
-    mwparser: ^1.3.0
+    mw.js: ^1.5.1
+    mwparser: ^1.3.2
     rimraf: ^3.0.2
     shared: "workspace:*"
     typescript: ^4.4.3
@@ -1012,8 +1012,8 @@ __metadata:
     eslint: 7.32.0
     find-yarn-workspace-root: 2.0.0
     lua-json: ^1.0.0
-    mw.js: ^1.4.5
-    mwparser: ^1.3.0
+    mw.js: ^1.5.1
+    mwparser: ^1.3.2
     rimraf: 3.0.2
     shared: "workspace:*"
     typescript: 4.4.3
@@ -1033,8 +1033,8 @@ __metadata:
     fs-extra: ^10.0.0
     greek-utils: ^1.3.0
     lua-json: ^1.0.0
-    mw.js: ^1.4.5
-    mwparser: ^1.3.0
+    mw.js: ^1.5.1
+    mwparser: ^1.3.2
     rimraf: ^3.0.2
     shared: "workspace:*"
     typescript: ^4.4.3
@@ -2113,25 +2113,25 @@ __metadata:
   languageName: node
   linkType: hard
 
-"mw.js@npm:^1.4.5":
-  version: 1.4.5
-  resolution: "mw.js@npm:1.4.5"
+"mw.js@npm:^1.5.1":
+  version: 1.5.1
+  resolution: "mw.js@npm:1.5.1"
   dependencies:
     form-data: ^4.0.0
     fs-extra: ^10.0.0
     node-fetch: ^2.6.1
     signale: ^1.4.0
     tough-cookie: ^4.0.0
-  checksum: 76d099bedff2d1cef39ae1e12713944a3b9bb9fdd33b3a1c768491382446d1b0f58a7eab77ed3ec6d5a857b2d6b0df1a5e3aa6ba9542af7cf9fd41ad44fb28f4
+  checksum: 8ba37cb689da368863c321ed7104b6c185ff1652ce89f300aae01410915d596a532c62b3d2280c92b7de5d757d51c3bc930cce03d5e1d0ca96c5159d92bc9e6c
   languageName: node
   linkType: hard
 
-"mwparser@npm:^1.3.0":
-  version: 1.3.0
-  resolution: "mwparser@npm:1.3.0"
+"mwparser@npm:^1.3.2":
+  version: 1.3.2
+  resolution: "mwparser@npm:1.3.2"
   dependencies:
     peggy: ^1.2.0
-  checksum: adef6156a9cd603f831bac858232f84c58a83a776d6074bb41e39361220fbf68577ca293a3990ec0cea230b0d248808f84b9d3aa3e101e929e3fb34216d207bb
+  checksum: 00c66fa6c57d07e5e9a8da6149ec85783ff324277d663eac4f98853f7ca434427b071ed8647281b6fc69cf13b24263b596f6004403dce251a49befb3fcf4dffe
   languageName: node
   linkType: hard
 
