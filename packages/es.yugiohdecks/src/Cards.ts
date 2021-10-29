@@ -22,7 +22,7 @@ const getIdentifier = ( name: string ): Set<string> => {
 	] )
 }
 
-const parseCard = ( infobox: Template ): string[] | null => {
+const parseCard = ( infobox: Template ): Array<string | null> | null => {
 	const message = infobox.getParameter( 'mensaje' )?.value
 	if ( message?.toLowerCase().includes( 'anime' ) ) return null
 	const cardType = infobox.getParameter( 'carta' )?.value.toLowerCase()
@@ -68,7 +68,7 @@ const parseCard = ( infobox: Template ): string[] | null => {
 		const [
 			english, attribute, type, level, attack, defense, code
 		] = attributes.map( attr => infobox.getParameter( attr )?.value )
-		if ( !english || !attribute || !type || !attack || !code ) return null
+		if ( !english || !attribute || !type || !attack ) return null
 		if ( cardType === 'monstruo de enlace' ) {
 			return [
 				english,
@@ -76,7 +76,7 @@ const parseCard = ( infobox: Template ): string[] | null => {
 				attribute.toLowerCase(),
 				type.toLowerCase(),
 				attack,
-				code
+				code ?? null
 			]
 		} else {
 			if ( !defense || !level ) return null
@@ -88,16 +88,16 @@ const parseCard = ( infobox: Template ): string[] | null => {
 				level,
 				attack,
 				defense,
-				code
+				code ?? null
 			]
 		}
 	}
 }
 
-const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, string[]>> => {
+const getCardsData = async ( wiki: FandomWiki ): Promise<Record<string, Array<string | null>>> => {
 	const cards = ( await wiki.getTransclusions( 'Plantilla:InfoboxCarta' ) ).sort()
 
-	const data: Record<string, string[]> = {}
+	const data: Record<string, Array<string | null>> = {}
 
 	for await ( const page of wiki.iterPages( cards ) ) {
 		const content = page.revisions[ 0 ]?.slots.main.content
@@ -132,7 +132,7 @@ void ( async () => {
 	const fandom = new Fandom()
 	const cards = await getCardsData( fandom.getWiki( 'es.yugioh' ) )
 
-	const sorted: Record<string, Record<string, string[]>> = {}
+	const sorted: Record<string, Record<string, Array<string | null>>> = {}
 	for ( const identifier in cards ) {
 		const firstLetter = identifier.substr( 0, 1 ).toUpperCase()
 		const group = /[A-Z]/.exec( firstLetter ) ? firstLetter : '7'
