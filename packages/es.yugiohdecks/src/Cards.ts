@@ -66,8 +66,9 @@ const parseCard = ( infobox: Template ): Array<string | null> | null => {
 			'inglés', 'atributo', 'tipo', 'nivel', 'ataque', 'defensa', 'código'
 		]
 		const [
-			english, attribute, type, level, attack, defense, code
+			english, attribute, type, level, attack, defense, _code
 		] = attributes.map( attr => infobox.getParameter( attr )?.value )
+		const code = _code && _code.length > 0 ? _code : null
 		if ( !english || !attribute || !type || !attack ) return null
 		if ( cardType === 'monstruo de enlace' ) {
 			return [
@@ -76,7 +77,7 @@ const parseCard = ( infobox: Template ): Array<string | null> | null => {
 				attribute.toLowerCase(),
 				type.toLowerCase(),
 				attack,
-				code ?? null
+				code
 			]
 		} else {
 			if ( !defense || !level ) return null
@@ -88,7 +89,7 @@ const parseCard = ( infobox: Template ): Array<string | null> | null => {
 				level,
 				attack,
 				defense,
-				code ?? null
+				code
 			]
 		}
 	}
@@ -152,6 +153,7 @@ void ( async () => {
 	for ( const key of keys ) {
 		const lua = format( sorted[ key ] ?? {} )
 		await bot.edit( {
+			bot: true,
 			text: lua,
 			title: `Module:RdDatos${ key }`
 		} )
