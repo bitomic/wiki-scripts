@@ -1,4 +1,7 @@
 {
+  "files.exclude": {
+    "packages/**/node_modules": true
+  },
   "search.exclude": {
     "**/.yarn": true,
     "**/.pnp.*": true
