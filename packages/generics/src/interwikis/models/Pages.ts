@@ -2,7 +2,7 @@ import type { ModelDefined, Optional } from 'sequelize'
 import { DataTypes } from 'sequelize'
 import { sequelize } from '../lib'
 
-interface IPagesAttributes {
+export interface IPagesAttributes {
 	id: number
 	lang: string
 	title: string
@@ -12,9 +12,8 @@ type IPagesCreationAttributes = Optional<IPagesAttributes, 'id'>
 
 export const Pages: ModelDefined<IPagesAttributes, IPagesCreationAttributes> = sequelize.define( 'Pages', {
 	id: {
-		autoIncrement: true,
 		primaryKey: true,
-		type: DataTypes.INTEGER
+		type: DataTypes.STRING
 	},
 	lang: {
 		type: DataTypes.STRING

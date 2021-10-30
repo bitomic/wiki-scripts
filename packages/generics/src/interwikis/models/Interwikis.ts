@@ -2,26 +2,35 @@ import { DataTypes } from 'sequelize'
 import type { ModelDefined } from 'sequelize'
 import { sequelize } from '../lib'
 
-interface IInterwikisAttributes {
-	id1: number
-	id2: number
+export interface IInterwikisAttributes {
+	fromId: number
+	toId?: number
+	toLang: string
+	toTitle: string
 }
 
 type IInterwikisCreationAttributes = IInterwikisAttributes
 
 export const Interwikis: ModelDefined<IInterwikisAttributes, IInterwikisCreationAttributes> = sequelize.define( 'Interwikis', {
-	id1: {
+	fromId: {
 		references: {
 			key: 'id',
 			model: 'Pages'
 		},
 		type: DataTypes.INTEGER
 	},
-	id2: {
+	toId: {
+		allowNull: true,
 		references: {
 			key: 'id',
 			model: 'Pages'
 		},
 		type: DataTypes.INTEGER
+	},
+	toLang: {
+		type: DataTypes.STRING
+	},
+	toTitle: {
+		type: DataTypes.STRING
 	}
 } )
