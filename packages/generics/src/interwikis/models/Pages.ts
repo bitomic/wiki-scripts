@@ -3,7 +3,7 @@ import { DataTypes } from 'sequelize'
 import { sequelize } from '../lib'
 
 export interface IPagesAttributes {
-	id: number
+	id: string
 	lang: string
 	title: string
 }
