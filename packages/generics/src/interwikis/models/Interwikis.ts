@@ -3,8 +3,8 @@ import type { ModelDefined } from 'sequelize'
 import { sequelize } from '../lib'
 
 export interface IInterwikisAttributes {
-	fromId: number
-	toId?: number
+	fromId: string
+	toId?: string
 	toLang: string
 	toTitle: string
 }
@@ -17,7 +17,7 @@ export const Interwikis: ModelDefined<IInterwikisAttributes, IInterwikisCreation
 			key: 'id',
 			model: 'Pages'
 		},
-		type: DataTypes.INTEGER
+		type: DataTypes.STRING
 	},
 	toId: {
 		allowNull: true,
@@ -25,7 +25,7 @@ export const Interwikis: ModelDefined<IInterwikisAttributes, IInterwikisCreation
 			key: 'id',
 			model: 'Pages'
 		},
-		type: DataTypes.INTEGER
+		type: DataTypes.STRING
 	},
 	toLang: {
 		type: DataTypes.STRING
