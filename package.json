@@ -9,7 +9,7 @@
     "genshin": "yarn workspace es.genshin-impact",
     "tboi": "yarn workspace es.bindingofisaac",
     "ygodecks": "yarn workspace es.yugiohdecks",
-	"generics": "yarn workspace generics",
+    "generics": "yarn workspace generics",
     "shared": "yarn workspace shared"
   },
   "devDependencies": {
