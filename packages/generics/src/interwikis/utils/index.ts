@@ -1,3 +1,4 @@
+export * from './capitalize'
 export * from './escape-regex'
 export * from './get-family'
 export * from './get-interwikis'
