@@ -31,9 +31,6 @@ interface IMediaWikiRequestLanglinks {
 }
 
 export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
-	await Interwikis.sync()
-	await Pages.sync()
-
 	const params: IMediaWikiRequestLanglinks = {
 		action: 'query',
 		//gapfilterlanglinks: 'withlanglinks',
