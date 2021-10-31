@@ -16,6 +16,7 @@
 	"dependencies": {
 		"mw.js": "^1.5.2",
 		"sequelize": "^6.8.0",
+		"shared": "workspace:*",
 		"sqlite3": "^5.0.2"
 	}
 }

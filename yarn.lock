@@ -2201,6 +2201,7 @@ __metadata:
     mw.js: ^1.5.2
     rimraf: 3.0.2
     sequelize: ^6.8.0
+    shared: "workspace:*"
     sqlite3: ^5.0.2
     typescript: 4.4.3
   languageName: unknown
