@@ -4,6 +4,8 @@ import { Interwikis } from '../models'
 import type { Model } from 'sequelize'
 
 export class InterwikiRemover extends InterwikiActor {
+	protected SUMMARY_HEADER = 'Removing interwikis'
+
 	public async execute( { doEdit = true }: { doEdit?: boolean } ): Promise<void> {
 		const nullies = await this.getNullies()
 
@@ -39,11 +41,13 @@ export class InterwikiRemover extends InterwikiActor {
 			}
 		}
 
-		await Interwikis.destroy( {
-			where: {
-				toId: null
-			}
-		} )
+		if ( doEdit ) {
+			await Interwikis.destroy( {
+				where: {
+					toId: null
+				}
+			} )
+		}
 	}
 
 	private async getNullies(): Promise<Record<string, Array<Model<IInterwikisAttributes, IInterwikisAttributes>>>> {
@@ -71,7 +75,7 @@ export class InterwikiRemover extends InterwikiActor {
 
 		if ( removed.length === 0 ) return false
 
-		const summary = `Removing interwikis: ${ removed.join( ', ' ) }`
+		const summary = `${ this.SUMMARY_HEADER }: ${ removed.join( ', ' ) }`
 		return this.edit( {
 			doEdit,
 			log: `Updating [[${ lang }:${ title }]]: ${ summary }`,
