@@ -38,6 +38,12 @@ export class InterwikiRemover extends InterwikiActor {
 				} )
 			}
 		}
+
+		await Interwikis.destroy( {
+			where: {
+				toId: null
+			}
+		} )
 	}
 
 	private async getNullies(): Promise<Record<string, Array<Model<IInterwikisAttributes, IInterwikisAttributes>>>> {
@@ -46,6 +52,7 @@ export class InterwikiRemover extends InterwikiActor {
 				toId: null
 			}
 		} )
+
 		return query.filter( i => this.allowedLanguages.has( i.getDataValue( 'fromLang' ) ) )
 			.reduce( ( collection, item ) => {
 				const lang = item.getDataValue( 'fromLang' )
