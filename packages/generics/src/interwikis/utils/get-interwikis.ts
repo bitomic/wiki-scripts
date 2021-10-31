@@ -59,12 +59,14 @@ export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
 			}
 			if ( !page.langlinks ) continue
 			for ( const langlink of page.langlinks ) {
-				interwikisrows.push( {
-					fromId: id,
-					fromLang: wiki.lang,
-					toLang: langlink.lang,
-					toTitle: capitalize( langlink.title )
-				} )
+				if ( langlink.title.trim().length > 0 ) {
+					interwikisrows.push( {
+						fromId: id,
+						fromLang: wiki.lang,
+						toLang: langlink.lang,
+						toTitle: capitalize( langlink.title )
+					} )
+				}
 			}
 		}
 
