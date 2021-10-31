@@ -1,5 +1,6 @@
 import type { IInterwikisAttributes, IPagesAttributes } from '../models'
 import { Interwikis, Pages } from '../models'
+import { capitalize } from './capitalize'
 import type { WikiWithLang } from './get-family'
 
 interface IMediaWikiResponseLanglinks {
@@ -62,7 +63,7 @@ export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
 					fromId: id,
 					fromLang: wiki.lang,
 					toLang: langlink.lang,
-					toTitle: langlink.title
+					toTitle: capitalize( langlink.title )
 				} )
 			}
 		}
