@@ -8,6 +8,7 @@
 	},
 	"devDependencies": {
 		"@types/node": "16.10.3",
+		"@types/prompts": "^2.0.14",
 		"dotenv": "10.0.0",
 		"eslint": "7.32.0",
 		"rimraf": "3.0.2",
@@ -15,6 +16,7 @@
 	},
 	"dependencies": {
 		"mw.js": "^1.5.2",
+		"prompts": "^2.4.2",
 		"sequelize": "^6.8.0",
 		"shared": "workspace:*",
 		"sqlite3": "^5.0.2"
