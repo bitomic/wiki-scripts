@@ -63,6 +63,7 @@ export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
 			for ( const langlink of page.langlinks ) {
 				interwikisrows.push( {
 					fromId: id,
+					fromLang: wiki.lang,
 					toLang: langlink.lang,
 					toTitle: langlink.title
 				} )

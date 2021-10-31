@@ -4,6 +4,7 @@ import { sequelize } from '../lib'
 
 export interface IInterwikisAttributes {
 	fromId: string
+	fromLang: string
 	toId?: string
 	toLang: string
 	toTitle: string
@@ -17,6 +18,9 @@ export const Interwikis: ModelDefined<IInterwikisAttributes, IInterwikisCreation
 			key: 'id',
 			model: 'Pages'
 		},
+		type: DataTypes.STRING
+	},
+	fromLang: {
 		type: DataTypes.STRING
 	},
 	toId: {
