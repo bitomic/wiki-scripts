@@ -66,7 +66,7 @@ export class InterwikiRemover {
 				if ( removed.length === 0 ) continue
 
 				const summary = `Removing interwikis: ${ removed.join( ', ' ) }`
-				console.log( `Updating [[${ page.title }]]: ${ summary }` )
+				console.log( `Updating [[${ lang }:${ page.title }]]: ${ summary }` )
 				if ( doEdit ) {
 					await this.bot.edit( {
 						bot: true,
