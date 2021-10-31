@@ -7,6 +7,7 @@
 		"build": "rimraf tsconfig.tsbuildinfo dist && tsc"
 	},
 	"devDependencies": {
+		"@types/fs-extra": "^9.0.13",
 		"@types/node": "16.10.3",
 		"@types/prompts": "^2.0.14",
 		"dotenv": "10.0.0",
@@ -15,6 +16,7 @@
 		"typescript": "4.4.3"
 	},
 	"dependencies": {
+		"fs-extra": "^10.0.0",
 		"mw.js": "^1.5.2",
 		"prompts": "^2.4.2",
 		"sequelize": "^6.8.0",
