@@ -17,14 +17,14 @@ export abstract class InterwikiActor {
 
 	public abstract execute( params: { doEdit?: boolean } ): Promise<void>
 
-	protected async edit( { doEdit, log, summary, text, title, type = 'text' }: { doEdit: boolean, log: string, summary: string, text: string, title: string, type?: 'text' | 'appendtext' } ): Promise<boolean> {
+	protected async edit( { doEdit, log, summary, text, title, type = 'text', usePageid = false }: { doEdit: boolean, log: string, summary: string, text: string, title: string, type?: 'text' | 'appendtext', usePageid?: boolean } ): Promise<boolean> {
 		console.log( log )
 		if ( doEdit ) {
 			// @ts-expect-error - faulty typings
 			const result = await this.bot.edit( {
 				bot: true,
 				summary,
-				title,
+				[ usePageid ? 'pageid' : 'title' ]: title,
 				[ type ]: text
 			} )
 				.then( () => true )
