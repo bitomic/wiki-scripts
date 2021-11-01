@@ -72,7 +72,7 @@ export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
 
 		if ( !req.continue ) break
 		if ( req.continue.gapcontinue ) params.gapcontinue = req.continue.gapcontinue
-		if ( req.continue.llcontinue ) params.llcontinue = req.continue.llcontinue
+		params.llcontinue = req.continue.llcontinue
 	}
 
 	await Pages.bulkCreate( Object.values( pagesrows ) )
