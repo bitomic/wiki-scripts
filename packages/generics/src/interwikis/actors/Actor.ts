@@ -1,7 +1,6 @@
-/* eslint-disable sort-imports */
-import type { WikiWithLang } from '../utils'
 import { escapeRegex, sleep } from '../utils'
 import type { FandomBot, Wiki } from 'mw.js'
+import type { WikiWithLang } from '../utils'
 
 export abstract class InterwikiActor {
 	protected allowedLanguages: Set<string>
@@ -18,14 +17,15 @@ export abstract class InterwikiActor {
 
 	public abstract execute( params: { doEdit?: boolean } ): Promise<void>
 
-	protected async edit( { doEdit, log, summary, text, title }: { doEdit: boolean, log: string, summary: string, text: string, title: string } ): Promise<boolean> {
+	protected async edit( { doEdit, log, summary, text, title, type = 'text' }: { doEdit: boolean, log: string, summary: string, text: string, title: string, type?: 'text' | 'appendtext' } ): Promise<boolean> {
 		console.log( log )
 		if ( doEdit ) {
+			// @ts-expect-error - faulty typings
 			const result = await this.bot.edit( {
 				bot: true,
 				summary,
-				text,
-				title
+				title,
+				[ type ]: text
 			} )
 				.then( () => true )
 				.catch( e => {
