@@ -23,6 +23,7 @@ export abstract class InterwikiActor {
 			// @ts-expect-error - faulty typings
 			const result = await this.bot.edit( {
 				bot: true,
+				nocreate: true,
 				summary,
 				[ usePageid ? 'pageid' : 'title' ]: title,
 				[ type ]: text
