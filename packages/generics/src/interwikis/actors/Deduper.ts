@@ -21,18 +21,17 @@ export class InterwikiDeduper extends InterwikiRemover {
 
 		for ( const lang in dupes ) {
 			const wiki = this.family[ lang ]
-			const ids = dupes[ lang ]?.map( i => i.fromId.split( /-/g ).pop() )
-				.filter( i => i !== undefined ) as string[] | undefined
+			const titles = dupes[ lang ]?.map( i => i.fromTitles.split( /\|/g ) ).flat()
 			const langDupes = dupes[ lang ]
-			if ( !ids || !wiki || !langDupes ) continue
+			if ( !titles || !wiki || !langDupes ) continue
 			await this.bot.setWiki( wiki )
 
-			for await ( const page of this.iterPagesById( wiki, ids ) ) {
+			for await ( const page of wiki.iterPages( titles ) ) {
 				const content = page.revisions[ 0 ]?.slots.main.content
 				if ( !content ) continue
 				const pageDupes = langDupes.filter( i => {
-					const id = i.fromId.split( /-/g ).pop()
-					return id && id === `${ page.pageid }`
+					const title = i.fromTitles.split( /\|/g )
+					return title.includes( page.title )
 				} )
 				const dupeInterwikis = pageDupes.map( i => InterwikiDeduper.regexify( i.toLang, i.toTitle ) )
 				await this.removeInterwikis( {
