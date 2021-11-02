@@ -45,8 +45,9 @@ export class InterwikiDeduper extends InterwikiRemover {
 		}
 
 		if ( doEdit ) {
-			const removeIds = Object.values( dupes ).map( i => i.map( j => ( { fromId: j.fromId, toId: j.toId } ) ) )
-				.flat()
+			const removeIds = Object.values( dupes )
+				.map( i => i.map( j => [ { fromId: j.fromId }, { toId: j.toId } ] ) )
+				.flat( 2 )
 			await Interwikis.destroy( {
 				where: {
 					[ Op.or ]: removeIds
