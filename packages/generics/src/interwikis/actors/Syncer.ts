@@ -64,7 +64,6 @@ export class InterwikiSyncer extends InterwikiActor {
 		const query = await sequelize.query<IItem>( sql, {
 			type: QueryTypes.SELECT
 		} )
-		console.log( query.filter( i => this.allowedLanguages.has( i.fromLang ) ).length )
 
 		return query.filter( i => this.allowedLanguages.has( i.fromLang ) )
 			.reduce( ( collection, item ) => {
