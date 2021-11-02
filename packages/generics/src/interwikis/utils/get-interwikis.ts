@@ -24,6 +24,7 @@ interface IMediaWikiRequestLanglinks {
 	action: 'query'
 	gapcontinue?: string | undefined
 	//gapfilterlanglinks: 'withlanglinks'
+	apfilterredir: 'nonredirects'
 	gaplimit: 'max'
 	generator: 'allpages'
 	llcontinue?: string | undefined
@@ -35,6 +36,7 @@ export const getInterwikis = async ( wiki: WikiWithLang ): Promise<void> => {
 	const params: IMediaWikiRequestLanglinks = {
 		action: 'query',
 		//gapfilterlanglinks: 'withlanglinks',
+		apfilterredir: 'nonredirects',
 		gaplimit: 'max',
 		generator: 'allpages',
 		lllimit: 'max',
