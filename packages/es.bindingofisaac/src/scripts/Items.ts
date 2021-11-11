@@ -105,9 +105,9 @@ void ( async () => {
 		for ( const item of items ) {
 			if ( !( 'description' in item ) ) continue
 			const row: IItem = {
-				descriptionTag: item.description,
+				descriptionTag: item.description.substring( 1 ),
 				id: `${ itemType.substr( 0, 1 ) }-${ item.id }`,
-				nameTag: item.name,
+				nameTag: item.name.substring( 1 ),
 				type: itemType
 			}
 			if ( item.achievement ) row.achievement = item.achievement
