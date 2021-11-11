@@ -5,7 +5,7 @@ import { sequelize } from 'shared'
 export interface IItem {
 	achievement?: number
 	descriptionTag: string
-	id: number
+	id: string
 	nameTag: string
 	type: 'active' | 'passive' | 'familiar' | 'trinket'
 }
@@ -20,24 +20,12 @@ export const Items = sequelize.define<IItemInterface>(
 			allowNull: true,
 			type: DataTypes.INTEGER
 		},
-		descriptionTag: {
-			references: {
-				key: 'key',
-				model: 'Translations'
-			},
-			type: DataTypes.STRING
-		},
+		descriptionTag: DataTypes.STRING,
 		id: {
 			primaryKey: true,
-			type: DataTypes.INTEGER
-		},
-		nameTag: {
-			references: {
-				key: 'key',
-				model: 'Translations'
-			},
 			type: DataTypes.STRING
 		},
+		nameTag: DataTypes.STRING,
 		type: DataTypes.STRING
 	},
 	{
