@@ -6,5 +6,6 @@ const filepath = path.resolve( workspaceRoot() ?? '..', 'database.sqlite' )
 
 export const sequelize = new Sequelize( {
 	dialect: 'sqlite',
+	logging: false,
 	storage: filepath
 } )
