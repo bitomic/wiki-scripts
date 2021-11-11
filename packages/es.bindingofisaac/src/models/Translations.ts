@@ -2,13 +2,13 @@ import { DataTypes } from 'sequelize'
 import type { Model } from 'sequelize'
 import { sequelize } from 'shared'
 
-interface ITranslation {
+export interface ITranslation {
 	key: string
 	lang: string
 	value: string
 }
 
-interface ITranslationInterface extends Model<ITranslation, ITranslation>, ITranslation {
+export interface ITranslationInterface extends Model<ITranslation, ITranslation>, ITranslation {
 }
 
 export const Translations = sequelize.define<ITranslationInterface>(

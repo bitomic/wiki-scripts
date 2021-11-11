@@ -2,7 +2,7 @@ import { DataTypes } from 'sequelize'
 import type { Model } from 'sequelize'
 import { sequelize } from 'shared'
 
-interface IItem {
+export interface IItem {
 	achievement?: number
 	descriptionTag: string
 	id: number
@@ -10,7 +10,7 @@ interface IItem {
 	type: 'active' | 'passive' | 'familiar' | 'trinket'
 }
 
-interface IItemInterface extends Model<IItem, IItem>, IItem {
+export interface IItemInterface extends Model<IItem, IItem>, IItem {
 }
 
 export const Items = sequelize.define<IItemInterface>(
