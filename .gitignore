@@ -8,7 +8,7 @@
 !.yarn/releases
 !.yarn/sdks
 !.yarn/versions
-database
+database.sqlite
 demo
 dist
 tsconfig.tsbuildinfo
