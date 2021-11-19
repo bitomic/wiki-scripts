@@ -11010,7 +11010,7 @@
       <string>炼金硫磺</string>
       <string>Сульфур</string>
       <string>Schwefel</string>
-      <string>Azufre</string>
+      <string>Azufre (activable)</string>
     </key>
     <key name="SULFUR_DESCRIPTION">
       <string>Temporary demon form</string>
@@ -13584,7 +13584,7 @@
       <string>晚餐</string>
       <string>Пища</string>
       <string>Abendbrot</string>
-      <string>Cena</string>
+      <string>Cena (Repentance)</string>
     </key>
     <key name="SUPPER_DESCRIPTION">
       <string>HP up</string>
@@ -14718,7 +14718,7 @@
       <string>癌症</string>
       <string>Рак</string>
       <string>Krebs</string>
-      <string>Cáncer</string>
+      <string>Cáncer (baratija)</string>
     </key>
     <key name="CANCER_TRINKET_DESCRIPTION">
       <string>Yay, cancer!</string>
