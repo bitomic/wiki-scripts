@@ -19,7 +19,7 @@
 		"fs-extra": "^10.0.0",
 		"mw.js": "^1.5.2",
 		"prompts": "^2.4.2",
-		"sequelize": "^6.9.0",
+		"sequelize": "^6.11.0",
 		"shared": "workspace:*",
 		"sqlite3": "^5.0.2"
 	}
