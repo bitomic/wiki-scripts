@@ -7,7 +7,7 @@
 		"rarities": "yarn node dist/Rarities.js"
 	},
 	"devDependencies": {
-		"@types/lua-json": "1.0.0",
+		"@types/lua-json": "1.0.1",
 		"@types/node": "16.10.3",
 		"dotenv": "10.0.0",
 		"eslint": "7.32.0",
