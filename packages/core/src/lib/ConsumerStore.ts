@@ -2,7 +2,7 @@ import type { Consumer } from './Consumer'
 import fs from 'fs'
 import path from 'path'
 
-export class Store {
+export class ConsumerStore {
 	protected readonly collection = new Map<string, Consumer>()
 	protected readonly path: string
 
@@ -12,6 +12,10 @@ export class Store {
 
 	public get( key: string ): Consumer | undefined {
 		return this.collection.get( key )
+	}
+
+	public keys(): string[] {
+		return [ ...this.collection.keys() ]
 	}
 
 	public async load(): Promise<void> {
