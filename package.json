@@ -5,12 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build:all": "yarn workspaces foreach -pvt run build",
-    "prepare": "husky install .github/husky",
-    "genshin": "yarn workspace es.genshin-impact",
-    "tboi": "yarn workspace es.bindingofisaac",
-    "ygodecks": "yarn workspace es.yugiohdecks",
-    "generics": "yarn workspace generics",
-    "shared": "yarn workspace shared"
+    "hooks": "husky install .github/husky"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",
