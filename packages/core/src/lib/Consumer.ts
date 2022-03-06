@@ -1,6 +1,7 @@
 import { env } from '@wiki-scripts/shared'
 import { Fandom } from 'mw.js'
 import type { FandomBot } from 'mw.js'
+import path from 'path'
 
 export interface ConsumerOptions {
 	name: string
@@ -17,7 +18,7 @@ export abstract class Consumer {
 
 	public constructor( options: ConsumerOptions ) {
 		this.fandom = new Fandom( {
-			cookies: 'cookies.json'
+			cookies: path.resolve( __dirname, '../../../cookies.json' )
 		} )
 		this.name = options.name
 	}
