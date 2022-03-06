@@ -5,7 +5,10 @@
   "license": "MIT",
   "scripts": {
     "build:all": "yarn workspaces foreach -pvt run build",
-    "hooks": "husky install .github/husky"
+    "hooks": "husky install .github/husky",
+    "core": "yarn workspace @wiki-scripts/core",
+    "genshin": "yarn workspace @wiki-scripts/es.genshin-impact",
+    "shared": "yarn workspace @wiki-scripts/shared"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",
