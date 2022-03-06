@@ -1,0 +1,19 @@
+{
+	"name": "@wiki-scripts/core",
+	"version": "1.0.0",
+	"main": "dist/main.js",
+	"private": true,
+	"scripts": {
+		"build": "rimraf tsconfig.tsbuildinfo dist && tsc"
+	},
+	"dependencies": {
+		"@wiki-scripts/shared": "workspace:*",
+		"mw.js": "^2.4.1"
+	},
+	"devDependencies": {
+		"@types/node": "16.10.3",
+		"eslint": "7.32.0",
+		"rimraf": "3.0.2",
+		"typescript": "4.4.3"
+	}
+}
