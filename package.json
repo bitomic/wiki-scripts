@@ -1,16 +1,14 @@
 {
-  "name": "wikiscripts",
+  "name": "wiki-scripts",
   "version": "1.0.0",
   "main": "index.js",
   "license": "MIT",
   "scripts": {
     "build:all": "yarn workspaces foreach -pvt run build",
-    "prepare": "husky install .github/husky",
-    "genshin": "yarn workspace es.genshin-impact",
-    "tboi": "yarn workspace es.bindingofisaac",
-    "ygodecks": "yarn workspace es.yugiohdecks",
-    "generics": "yarn workspace generics",
-    "shared": "yarn workspace shared"
+    "hooks": "husky install .github/husky",
+    "core": "yarn workspace @wiki-scripts/core",
+    "genshin": "yarn workspace @wiki-scripts/es.genshin-impact",
+    "shared": "yarn workspace @wiki-scripts/shared"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",

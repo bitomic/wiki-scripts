@@ -1,6 +1,0 @@
-export * from './capitalize'
-export * from './escape-regex'
-export * from './fill-interwikis-ids'
-export * from './get-family'
-export * from './get-interwikis'
-export * from './sleep'
