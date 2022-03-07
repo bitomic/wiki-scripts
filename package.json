@@ -8,7 +8,8 @@
     "hooks": "husky install .github/husky",
     "core": "yarn workspace @wiki-scripts/core",
     "genshin": "yarn workspace @wiki-scripts/es.genshin-impact",
-    "shared": "yarn workspace @wiki-scripts/shared"
+    "shared": "yarn workspace @wiki-scripts/shared",
+    "ygodecks": "yarn workspace @wiki-scripts/es.yugiohdecks"
   },
   "devDependencies": {
     "@commitlint/cli": "13.2.1",
