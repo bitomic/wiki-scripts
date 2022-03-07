@@ -5,6 +5,7 @@
   "license": "MIT",
   "scripts": {
     "build:all": "yarn workspaces foreach -pvt run build",
+    "lint:all": "yarn workspaces foreach -pv --exclude wiki-scripts run lint:fix",
     "hooks": "husky install .github/husky",
     "core": "yarn workspace @wiki-scripts/core",
     "genshin": "yarn workspace @wiki-scripts/es.genshin-impact",

@@ -4,7 +4,8 @@
 	"main": "dist/main.js",
 	"private": true,
 	"scripts": {
-		"build": "rimraf tsconfig.tsbuildinfo dist && tsc"
+		"build": "rimraf tsconfig.tsbuildinfo dist && tsc",
+		"lint:fix": "eslint src/ --fix --ext .ts --cache"
 	},
 	"devDependencies": {
 		"@types/node": "16.10.3",
