@@ -10,7 +10,9 @@
 	"dependencies": {
 		"@wiki-scripts/core": "workspace:*",
 		"lua-json": "^1.0.0",
-		"mw.js": "^2.4.1"
+		"mw.js": "^2.4.1",
+		"node-html-parser": "^5.3.3",
+		"undici": "^4.16.0"
 	},
 	"devDependencies": {
 		"@types/lua-json": "^1.0.1",
