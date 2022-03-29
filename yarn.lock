@@ -493,6 +493,23 @@ __metadata:
   languageName: unknown
   linkType: soft
 
+"@wiki-scripts/es.pokemongo@workspace:packages/es.pokemongo":
+  version: 0.0.0-use.local
+  resolution: "@wiki-scripts/es.pokemongo@workspace:packages/es.pokemongo"
+  dependencies:
+    "@bitomic/utilities": ^1.0.0
+    "@types/lua-json": ^1.0.1
+    "@types/node": 16.10.3
+    "@wiki-scripts/shared": "workspace:*"
+    eslint: 7.32.0
+    lua-json: ^1.0.0
+    mw.js: ^2.4.1
+    mwparser: ^1.3.3
+    rimraf: 3.0.2
+    typescript: 4.6.2
+  languageName: unknown
+  linkType: soft
+
 "@wiki-scripts/es.yugiohdecks@workspace:packages/es.yugiohdecks":
   version: 0.0.0-use.local
   resolution: "@wiki-scripts/es.yugiohdecks@workspace:packages/es.yugiohdecks"

@@ -9,6 +9,7 @@
     "hooks": "husky install .github/husky",
     "core": "yarn workspace @wiki-scripts/core",
     "genshin": "yarn workspace @wiki-scripts/es.genshin-impact",
+    "go": "yarn workspace @wiki-scripts/es.pokemongo",
     "shared": "yarn workspace @wiki-scripts/shared",
     "unite": "yarn workspace @wiki-scripts/es.pokemon-unite",
     "ygodecks": "yarn workspace @wiki-scripts/es.yugiohdecks"
