@@ -33,4 +33,4 @@ jobs:
 
     - run: yarn build:all
 
-    - run: yarn genshin node dist/main.js ${{ github.event.inputs.consumer }}
+    - run: yarn go node dist/main.js ${{ github.event.inputs.consumer }}
