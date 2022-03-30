@@ -1,0 +1,36 @@
+name: es.pokemongo
+
+on: 
+  workflow_dispatch:
+    inputs:
+      consumer:
+        description: 'Consumer name'
+        required: true
+        type: choice
+        options:
+        - 'pokémon'
+
+jobs:
+  run:
+    runs-on: ubuntu-latest
+
+    env:
+      FANDOM_PASSWORD: ${{ secrets.FANDOM_PASSWORD }}
+      FANDOM_USERNAME: ${{ secrets.FANDOM_USERNAME }}
+
+    steps:
+    - uses: actions/checkout@v3
+
+    - name: Use Node.js 16.x
+      uses: actions/setup-node@v3
+      with:
+        node-version: 16.x
+        cache: 'npm'
+
+    - run: npm i -g yarn
+
+    - run: yarn install
+
+    - run: yarn build:all
+
+    - run: yarn genshin node dist/main.js ${{ github.event.inputs.consumer }}
