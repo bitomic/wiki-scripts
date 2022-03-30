@@ -9,6 +9,7 @@
 	},
 	"dependencies": {
 		"@bitomic/utilities": "^1.0.0",
+		"@wiki-scripts/core": "workspace:*",
 		"@wiki-scripts/shared": "workspace:*",
 		"lua-json": "^1.0.0",
 		"mw.js": "^2.4.1",

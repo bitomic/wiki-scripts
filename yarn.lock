@@ -500,6 +500,7 @@ __metadata:
     "@bitomic/utilities": ^1.0.0
     "@types/lua-json": ^1.0.1
     "@types/node": 16.10.3
+    "@wiki-scripts/core": "workspace:*"
     "@wiki-scripts/shared": "workspace:*"
     eslint: 7.32.0
     lua-json: ^1.0.0
