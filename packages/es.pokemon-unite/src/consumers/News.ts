@@ -75,7 +75,7 @@ export class PrefixesConsumer extends Consumer {
 		} ) )
 
 		await bot.edit( {
-			//bot: true,
+			bot: true,
 			text: format( newsData ),
 			title: 'Module:Noticias/datos'
 		} )
