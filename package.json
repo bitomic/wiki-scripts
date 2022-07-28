@@ -30,5 +30,5 @@
   "dependencies": {
     "lint-staged": "^11.2.0"
   },
-  "packageManager": "yarn@3.2.0"
+  "packageManager": "yarn@3.2.2"
 }
